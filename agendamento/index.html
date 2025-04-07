@@ -38,20 +38,25 @@
 
     <script>
         function enviarWhatsApp() {
-            var nome = document.getElementById("nome").value;
-            var cidade = document.getElementById("cidade").value;
-            var projeto = document.getElementById("projeto").value;
-            var telefone = "5547991468833"; // Substitua pelo seu número do WhatsApp com DDD
-            
-            if (nome === "" || cidade === "" || projeto === "") {
-                alert("Por favor, preencha todos os campos.");
-                return;
-            }
-            
-            var mensagem = `Olá, meu nome é ${nome}, sou de ${cidade} e tenho interesse em um projeto de ${projeto}. Poderia me passar mais informações?`;
-            var url = `https://wa.me/55${telefone}?text=${encodeURIComponent(mensagem)}`;
-            window.open(url, "_blank");
-        }
+    var nome = document.getElementById("nome").value;
+    var cidade = document.getElementById("cidade").value;
+    var projeto = document.getElementById("projeto").value;
+    var telefone = "5547991468833"; // Substitua pelo seu número do WhatsApp com DDD
+
+    if (nome === "" || cidade === "" || projeto === "") {
+        alert("Por favor, preencha todos os campos.");
+        return;
+    }
+
+    var mensagem = 
+        `Olá, meu nome é ${nome}.\n` +
+        `Sou de ${cidade}.\n` +
+        `Tenho interesse em um projeto de ${projeto}.\n` +
+        `Poderia me passar mais informações?`;
+
+    var url = `https://wa.me/55${telefone}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+}
     </script>
 </body>
 </html>
